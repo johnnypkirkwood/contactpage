@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>App Ext Demo</title>
+  <link rel="stylesheet" type="text/css" href="assets/styles/salesforce-lightning-design-system.css" />
+  <script src="scripts/contact.js"></script>
+  <script src="assets/faker/faker.js"></script>
+  <style>
+    @keyframes expand {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+        background: #5470B0;
+      }
+    }
+
+    .listItem {
+      float: left;
+      background: #00DECF;
+      width: 100px;
+      height: 100px;
+      animation: expand .5s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="overflow-y: scroll; -webkit-overflow-scrolling: touch;">
+    <div class="slds-page-header">
+      <div class="slds-page-header__row">
+        <div class="slds-page-header__col-title">
+          <div class="slds-media">
+            <div class="slds-media__figure">
+              <span class="slds-icon_container slds-icon-standard-apex-plugin" title="opportunity">
+                <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                </svg>                
+              </span>
+            </div>
+            <div class="slds-media__body">
+              <div class="slds-page-header__name">
+                <div class="slds-page-header__name-title">
+                  <h1>
+                    <span class="slds-page-header__title slds-truncate" title="Web Extension Test">Create Contact Demo!</span>
+                  </h1>
+                </div>
+                
+              </div>
+              <p class="slds-page-header__name-meta">fsl.record createRecord</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:white">
+
+      
+        <div class="slds-form-element slds-var-p-horizontal_medium">
+          <label class="slds-form-element__label" style="font-size:18px;" for="text-input-record-id">
+            <abbr class="slds-required" title="required">* </abbr>FirstName</label>
+          <div class="slds-form-element__control">
+            <input type="text" id="text-input-firstname" style="font-size:18px;"
+              required="" class="slds-input">
+          </div>
+        </div>
+
+        <div class="slds-form-element slds-var-p-horizontal_medium">
+          <label class="slds-form-element__label" style="font-size:18px;" for="text-input-record-id">
+            <abbr class="slds-required" title="required">* </abbr>LastName</label>
+          <div class="slds-form-element__control">
+            <input type="text" id="text-input-lastname" style="font-size:18px;"
+              required="" class="slds-input">
+          </div>
+        </div>
+
+        <div class="slds-form-element slds-var-p-horizontal_medium">
+          <label class="slds-form-element__label" style="font-size:18px;" for="text-input-record-id">
+            <abbr class="slds-required" title="required">* </abbr>Title</label>
+          <div class="slds-form-element__control">
+            <input type="text" id="text-input-title" style="font-size:18px;"
+              required="" class="slds-input">
+          </div>
+        </div>
+
+        <div class="slds-form-element slds-var-p-horizontal_medium">
+          <label class="slds-form-element__label" style="font-size:18px;" for="text-input-record-id">
+            <abbr class="slds-required" title="required">* </abbr>AccountId</label>
+          <div class="slds-form-element__control">
+            <input type="text" id="text-input-accountId" value="001R0000003RrDcIAK" style="font-size:18px;"
+              required="" class="slds-input">
+          </div>
+        </div>
+
+        <div class="slds-p-top_large">
+          <button class="slds-button slds-button_brand slds-align_absolute-center" style="font-size:18px;"
+            onclick="randomize()">
+            Randomize
+          </button>
+          <ul class="slds-has-dividers_around-space slds-p-top_medium" id="testUL"></ul>
+        </div>
+        <div class="slds-p-top_small">
+          <button class="slds-button slds-button_brand slds-align_absolute-center" style="font-size:18px;"
+            onclick="save()">
+            Save
+          </button>
+          <ul class="slds-has-dividers_around-space slds-p-top_medium" id="testUL"></ul>
+        </div>
+      </div>
+      <div class="slds-form" role="list">
+        <div class="slds-form__row" id="record_list">
+        </div>
+      </div>
+    </div>
+
+    <template id="field_template">
+      <div class="listItem slds-form__item slds-p-left_large slds-p-right_large slds-p-bottom_small" style="background:white;" role="listitem">
+        <div class="slds-form-element slds-form-element_edit slds-form-element_readonly slds-form-element_stacked slds-hint-parent">
+          <span class="slds-form-element__label slds-p-bottom_medium" style="font-size:18px;" id="field_type"></span>
+          <div class="slds-form-element__control">
+          </div>
+        </div>
+      </div>
+    </template>
+  
+</body>
+
+</html>
